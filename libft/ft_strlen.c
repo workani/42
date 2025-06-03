@@ -6,11 +6,11 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:15:38 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/02 17:21:29 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/03 20:48:42 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {
@@ -22,3 +22,8 @@ size_t ft_strlen(const char *s)
         len++;
     return (len);
 }
+
+// int main()
+// {
+//     printf("len: %zu", ft_strlen("hello"));
+// }

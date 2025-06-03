@@ -6,11 +6,11 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:07:42 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/03 17:10:30 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/03 20:49:15 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {
