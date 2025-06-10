@@ -1,4 +1,10 @@
 .vscode/
 TODO
 libftTester/
+
+playground.c
+
+# Binary
 a.out
+*.a
+*.o
