@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 16:50:23 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/04 16:39:32 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/04 14:47:05 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/10 19:07:40 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    unsigned char *tmp_dst;
-    unsigned char *tmp_src;
+    size_t i;
+    size_t src_len;
 
-    tmp_dst = (unsigned char*) dst;
-    tmp_src = (unsigned char*) src;
-    
-    while (n--)
-        *tmp_dst++ = *tmp_src++;
-    return (dst);
+    i = 0;
+    src_len = ft_strlen(src);
+    if (size == 0)
+        return (src_len);
+    while (i < (size - 1) && src[i])
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = 0;
+    return (src_len);
 }
-
 
 // int main()
 // {
-//     int n = 6;
-//     int dst[n];
-//     int src[] = {6, 2, 5, 5, 3, 1};
-    
-//     ft_memcpy(dst, src, 24);
+//     char dst[100];
+//     char src[] = "Bobik";
 
-//     for(int i = 0; i < n; i++)
-//         printf("arr[%d]: %d\n",i + 1, dst[i]);
+//     ft_strlcpy(dst, src, 6);
+//     printf("result: %s", dst);
 // }

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 16:50:23 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/04 16:39:32 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/05 12:49:22 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/05 13:06:18 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+char *ft_strdup(const char *s)
 {
-    unsigned char *tmp_dst;
-    unsigned char *tmp_src;
-
-    tmp_dst = (unsigned char*) dst;
-    tmp_src = (unsigned char*) src;
+    int i;
+    int s_len;
+    char *result;
     
-    while (n--)
-        *tmp_dst++ = *tmp_src++;
-    return (dst);
+    i = 0;
+    s_len = ft_strlen(s);
+    result = malloc(s_len + 1);
+    if (result == NULL)
+        return (NULL);
+    while (i <= s_len) // includes '\0'
+    {
+        result[i] = s[i];
+        i++;
+    }
+    return (result);
 }
-
 
 // int main()
 // {
-//     int n = 6;
-//     int dst[n];
-//     int src[] = {6, 2, 5, 5, 3, 1};
-    
-//     ft_memcpy(dst, src, 24);
-
-//     for(int i = 0; i < n; i++)
-//         printf("arr[%d]: %d\n",i + 1, dst[i]);
+//     char str[] = "Now I Am Become Death, the Destroyer of Worlds.";
+//     printf("res: %s", ft_strdup(str));
 // }

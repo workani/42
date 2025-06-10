@@ -6,13 +6,13 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:02:39 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/03 20:49:31 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/10 20:55:38 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int ft_isascii(int c)
 {
     if (c >= 0 && c <= 127)
         return (1);

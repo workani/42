@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 16:50:23 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/04 16:39:32 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/04 15:17:30 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/04 15:31:06 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    unsigned char *tmp_dst;
-    unsigned char *tmp_src;
+    size_t i;
 
-    tmp_dst = (unsigned char*) dst;
-    tmp_src = (unsigned char*) src;
-    
-    while (n--)
-        *tmp_dst++ = *tmp_src++;
-    return (dst);
+    i = 0;
+    while ((s1[i] || s2[i]) && i < n)
+    {
+        if (s1[i] != s2[i])
+            return (s1[i] - s2[i]);
+        i++;
+    }
+    return (0);
 }
-
 
 // int main()
 // {
-//     int n = 6;
-//     int dst[n];
-//     int src[] = {6, 2, 5, 5, 3, 1};
-    
-//     ft_memcpy(dst, src, 24);
-
-//     for(int i = 0; i < n; i++)
-//         printf("arr[%d]: %d\n",i + 1, dst[i]);
+//     printf("result: %d\n", ft_strncmp("hello", "hello", 5));
+//     printf("result: %d\n", ft_strncmp("zello", "horld", 5));
+//     printf("result: %d\n", ft_strncmp("world", "worldddddddd", 20));
 // }

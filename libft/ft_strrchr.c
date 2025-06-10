@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 15:59:18 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/10 20:53:55 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/04 15:08:05 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/04 15:14:26 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+char *ft_strchr(const char *s, int c)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    return (0);
+    char *occurrence;
+    
+    occurrence = NULL;
+    while (*s)
+    {
+        if (*s == c)
+            occurrence = (char *)s;
+        s++;
+    }
+    return (occurrence);
 }
 
-
+// int main()
+// {
+//     char *str = "hello";
+//     printf("result: %c\n", *ft_strchr(str, 'e'));
+// }

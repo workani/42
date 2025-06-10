@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "todo": "c"
-    }
+        "todo": "c",
+        "random": "c",
+        "libft.h": "c"
+    },
+    "cSpell.words": [
+        "Danylo"
+    ]
 }

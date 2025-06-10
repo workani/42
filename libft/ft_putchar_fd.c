@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 15:59:18 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/10 20:53:55 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/05 17:25:53 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/05 17:37:52 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-int ft_isalpha(int c)
+void ft_putchar_fd(char c, int fd)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    return (0);
+    write(fd, &c, 1);
 }
-
-
+// int main()
+// {
+//     ft_putstr_fd("kkkkkkodddding", 1);
+// }
