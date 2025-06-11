@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 18:08:03 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/11 19:46:51 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/11 19:47:45 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,50 +71,13 @@ char **ft_split(char const *s, char c)
 }
 
 
-int main() {
-	char **strs;
-
+// int main() {
+// 	char **strs;
 	// Test 1
 	// strs = ft_split("hello, world, this is workani", ',');
 	// for (int i = 0; i < 3; i++)
 	// 	printf("%s\n", strs[i]);
-	
-
-	// 	// Test 3
-	// strs = ft_split("bye,world", ',');
-	// printf("Test 3: Input = \"hello!zzzzzzzz\", Sep = 'z'\nExpected:\nhello!\nGot:\n");
-	// for (int i = 0; i < 2; i++)
-	// 	printf("%s\n", strs[i]);
-
-	// Test 4
-	// strs = ft_split("\11\11\11\11hello!\11\11\11\11", '\11');  // \11 = tab
-	// printf("Test 4: Input = \"\\11\\11\\11\\11hello!\\11\\11\\11\\11\", Sep = '\\11'\nExpected:\nhello!\nGot:\n");
-	// for (int i = 0; i < 1; i++)
-	// 	printf("%s\n", strs[i]);
-
-// 	// Test 5
-// 	strs = ft_split("", 'a');
-// 	printf("Test 5: Input = \"\", Sep = 'a'\nExpected:\n(nothing)\nGot:\n");
-// 	// Should be no output
-
-// 	// Test 6
-// 	strs = ft_split("ggggggggggg", 'g');
-// 	printf("Test 6: Input = \"ggggggggggg\", Sep = 'g'\nExpected:\n(nothing)\nGot:\n");
-// 	// Should be no output
-
-// 	// Test 7
-	// strs = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-	// printf("Test 7: Input = \"^^^1^^2a,^^^^3^^^^--h^^^^\", Sep = '^'\nExpected:\n1\n2a,\n 3\n--h\nGot:\n");
-// 	for (int i = 0; i < 4; i++)
-// 		printf("%s\n", strs[i]);
-
-	// Test 8
-	// strs = ft_split("nonempty", '\0');
-	// printf("Test 8: Input = \"nonempty\0\", Sep = '\\0'\nExpected:\nnonempty\nGot:\n");
-	// for (int i = 0; i < 1; i++)
-	// 	printf("%s\n", strs[i]);
-
-	return 0;
-}
+// 	return 0;
+// }
 
 
