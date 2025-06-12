@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 18:08:03 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/11 19:47:45 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/11 23:38:39 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int ft_words_count(char *str, char delimiter)
 			words_count++;
 		i++;
 	}
+	// if (words_count == 0)
+	// 	return (1);
 	return (words_count);
 }
 
@@ -44,6 +46,13 @@ char *ft_cst_strncpy(char *dest, char *src, int n)
 	return (dest);
 }
 
+char *ft_allocate_empty_str()
+{
+	char *str = malloc(sizeof(char));
+	str[0] = '\0';
+	return (str);
+}
+
 char **ft_split(char const *s, char c)
 {
 	int i;
@@ -53,7 +62,8 @@ char **ft_split(char const *s, char c)
 
 	i = 0;
 	strs_idx = 0;
-	strs = (char **) malloc(ft_words_count((char*) s, c) * sizeof(char*));
+	
+	strs = (char **) malloc(ft_words_count((char *) s, c) * sizeof(char *) + 1);
 	while (s[i])
 	{
 		if (s[i] != c && s[i] != '\0')
@@ -61,23 +71,25 @@ char **ft_split(char const *s, char c)
 			last_word_idx = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
-			strs[strs_idx] = malloc((i - last_word_idx) + 1);
+			strs[strs_idx] = malloc((i - last_word_idx + 1) * sizeof(char));
 			ft_cst_strncpy(strs[strs_idx], (char*) s + last_word_idx, i - last_word_idx);
 			strs_idx++;
 		}
 		i++;
 	}
+	strs[strs_idx] = NULL;
 	return (strs);
 }
 
 
-// int main() {
-// 	char **strs;
-	// Test 1
-	// strs = ft_split("hello, world, this is workani", ',');
-	// for (int i = 0; i < 3; i++)
-	// 	printf("%s\n", strs[i]);
-// 	return 0;
-// }
+int main() {
+	char **strs;
+	strs = ft_split("hello!", ' ');
+	
+	for (int i = 0; i < 2; i++)
+		printf("%p\n", strs[i]);
+
+	return 0;
+}
 
 
