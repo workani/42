@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:28:34 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/05 13:43:37 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:09:11 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void *ft_memmove(void *dst, const void *src, size_t len)
   }
   return (dst);
 }
-int main()
-{
-    char str[100] = "Learningisfun";
-    char *first, *second;
-    first = str;
-    second = str;
-    printf("Original string :%s\n ", str);
+// int main()
+// {
+//     char str[100] = "Learningisfun";
+//     char *first, *second;
+//     first = str;
+//     second = str;
+//     printf("Original string :%s\n ", str);
     
-    // when overlap happens then it just ignore it
-    // memcpy(first + 8, first, 10);
-    // printf("memcpy overlap : %s\n ", str);
+//     // when overlap happens then it just ignore it
+//     // memcpy(first + 8, first, 10);
+//     // printf("memcpy overlap : %s\n ", str);
 
-    // when overlap it start from first position
-    memcpy(second + 8, first, 10);
-    printf("memmove overlap : %s\n ", str);
+//     // when overlap it start from first position
+//     memcpy(second + 8, first, 10);
+//     printf("memmove overlap : %s\n ", str);
 
-    return 0;
-}
+//     return 0;
+// }
