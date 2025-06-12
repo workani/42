@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:33:25 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/10 20:54:48 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:24:58 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ int ft_itostr(char dst[], int src)
     int i;
     
     i = 0;
-    while (src)
-    {
-        i++;
-    }
     while (true)
     {
         dst[i] = src % 10 + '0';
@@ -60,12 +56,12 @@ void ft_putnbr_fd(int n, int fd)
         ft_putchar_fd(nbr[i], fd);
 }
 
-int main()
-{
-    // ft_putnbr_fd(2147483647, 1);
-    // ft_putchar_fd('\n', 1);
-    // ft_putnbr_fd(1234, 1);
-    // ft_putchar_fd('\n', 1);
-    // ft_putnbr_fd(-1234, 1);
-    // ft_putnbr_fd(-1234, 1);
-}
+// int main()
+// {
+//     // ft_putnbr_fd(2147483647, 1);
+//     // ft_putchar_fd('\n', 1);
+//     // ft_putnbr_fd(1234, 1);
+//     // ft_putchar_fd('\n', 1);
+//     // ft_putnbr_fd(-1234, 1);
+//     // ft_putnbr_fd(-1234, 1);
+// }
