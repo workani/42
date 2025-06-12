@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:56:29 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/04 15:06:36 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:29:26 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 char *ft_strchr(const char *s, int c)
 {
-    while (*s)
+    int i;
+    
+    i = 0;
+    c = c % 128; // prevent overflow
+    while (s[i])
     {
-        if (*s == c)
-            return (char *)(s);
-        s++;
+        if (s[i] == c)
+            return (char *)(s + i);
+        i++;
     }
+    if (c == '\0')
+        return (char *) (s + i);
     return (NULL);
 }
 
