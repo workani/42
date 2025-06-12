@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:58:21 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/12 17:49:24 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 18:31:08 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     size_t i;
+    size_t s_len;
     char *result;
     
     i = 0;
+    s_len = ft_strlen(s);
+    if (len > s_len)
+        len = s_len;
     result = malloc(len + 1);
-    if (result == NULL || s == NULL)
-        return (NULL);
+    if (start >= s_len)
+        len = 0;
     while (i < len && s[start])
     {
         result[i] = s[start];
@@ -34,5 +38,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 // int main()
 // {
-//     printf("res: %s", ft_substr("hello, my name is Danylo", 18, 6));
+//     printf("res: %c", ft_substr("", 1, 1)[3]);
 // }
