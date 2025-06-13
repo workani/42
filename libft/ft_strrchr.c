@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (c == '\0')
 		occurrence = (char *)s + i;
-	return ((char *) occurrence);
+	return ((char *)occurrence);
 }
 
 // int main()
