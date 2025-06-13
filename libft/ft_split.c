@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 18:08:03 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/11 23:38:39 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 13:14:20 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char **ft_split(char const *s, char c)
 
 	i = 0;
 	strs_idx = 0;
-	
-	strs = (char **) malloc(ft_words_count((char *) s, c) * sizeof(char *) + 1);
+	strs = (char **) malloc((ft_words_count((char *) s, c) + 1) * sizeof(char *));
 	while (s[i])
 	{
 		if (s[i] != c && s[i] != '\0')
@@ -75,21 +74,22 @@ char **ft_split(char const *s, char c)
 			ft_cst_strncpy(strs[strs_idx], (char*) s + last_word_idx, i - last_word_idx);
 			strs_idx++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
 	strs[strs_idx] = NULL;
 	return (strs);
 }
 
 
-int main() {
-	char **strs;
-	strs = ft_split("hello!", ' ');
+// int main() {
+// 	char **strs;
+// 	strs = ft_split("hello!", ' ');
 	
-	for (int i = 0; i < 2; i++)
-		printf("%p\n", strs[i]);
+// 	for (int i = 0; i < 2; i++)
+// 		printf("%p\n", strs[i]);
 
-	return 0;
-}
+// 	return 0;
+// }
 
 

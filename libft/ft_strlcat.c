@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:32:38 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/12 21:24:07 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 13:44:27 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,15 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
     i = 0;
     j = dst_len;
     if (dst_len >= size)
-        return (src_len + dst_len);
+        return (src_len + size);
     while (i < (size - dst_len - 1) && src[i])
     {
         dst[j] = src[i];
         j++;
         i++;       
     }   
-    if (src[i] != '\0')
-        return (size); 
     dst[j] = 0;    
-    return (ft_strlen(dst));
+    return (src_len + dst_len);
 }
 // int main()
 // {   

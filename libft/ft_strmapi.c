@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:09:38 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/05 17:25:36 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:47:59 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     
     i = 0;
     s_len = ft_strlen(s);
-    result = malloc(s_len);
+    result = malloc(s_len + 1);
     if (result == NULL)
         return (NULL);    
     while (s[i])
@@ -29,6 +29,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
         result[i] = f(i, s[i]);
         i++;
     }
+    result[i] = '\0';
     return (result);
 }
 

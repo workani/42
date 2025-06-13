@@ -6,11 +6,12 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:12:50 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/12 20:26:33 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 13:38:47 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <limits.h>
 #include "libft.h"
 
 int ft_get_int_len(int n)
@@ -28,47 +29,41 @@ int ft_get_int_len(int n)
     return (i);
 }
 
-/* Append each digit of the n in reverse order to the result str*/
-void ft_digits_to_str(char *dest, int n, int i)
-{
-    dest[i + 1] = '\0'; 
-    while (i--)
-    {
-        if (dest[i] == '-')
-            break; 
-        dest[i] = (n % 10) + '0';
-        n /= 10; 
-    }
-}
+
+
 
 char *ft_itoa(int n)
 {
     int i;
     char *result;
   
+    if (n == INT_MIN)
+        return (ft_strdup("-2147483648"));
     i = 0;
-    result = (char *)malloc(12);
+    result = (char *)malloc(12 * sizeof(char));
     if (result == NULL)
         return (NULL);
-    if (n == -2147483648)
-    {
-        ft_strlcpy(result, "-2147483648", 12);
-        return (result);
-    }
     if (n < 0)
     {
-        result[i] = '-';
         n = -n;
-        i++;
+        result[0] = '-';
+        i++; 
     }
     i += ft_get_int_len(n);
-    ft_digits_to_str(result, n, i);
+    result[i] = '\0';
+    while (i--)
+    {
+        if (result[i] != '-')
+            result[i] = (n % 10) + '0';
+        n /= 10;
+    }
     return (result);
 }
 // int main()
 // {
-//     printf("res: %s\n", ft_itoa(1234423434));
-//     printf("res: %s\n", ft_itoa(-1234));
-//     printf("res: %s\n", ft_itoa(0));
-//     printf("res: %s\n", ft_itoa(-2147483648));
+//     printf("res: %s\n", ft_itoa(1234));
+//     // printf("res: %s\n", ft_itoa(1234423434));
+//     // printf("res: %s\n", ft_itoa(-1234));
+//     // printf("res: %s\n", ft_itoa(0));
+//     // printf("res: %s\n", ft_itoa(-2147483648));
 // }

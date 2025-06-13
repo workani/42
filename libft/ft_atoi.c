@@ -6,11 +6,21 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 17:46:35 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/04 18:41:23 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:53:42 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include "libft.h"
+
+bool ft_isspace(char c)
+{
+    if (c == ' ' || c == '\t' || c == '\n')
+        return (true);
+    if (c == '\v' || c == '\r' || c == '\f')
+        return (true);
+    return (false);
+}
 
 int ft_atoi(const char *nptr)
 {
@@ -21,7 +31,7 @@ int ft_atoi(const char *nptr)
     i = 0;
     sign = 1;
     result = 0;
-    while (nptr[i] == ' ' || nptr[i] == '\t')
+    while (ft_isspace(nptr[i]))
         i++;
     if (nptr[i] == '+' || nptr[i] == '-')
     {

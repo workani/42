@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:44:30 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/05 16:07:22 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 10:48:48 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-    result = malloc(ft_strlen(s1) + ft_strlen(s2));
+    result = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 	result_idx = 0;
     if (result == NULL)
         return (NULL);
