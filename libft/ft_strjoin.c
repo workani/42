@@ -6,17 +6,17 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:44:30 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/13 10:48:48 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:01:45 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
-char *ft_append_str(char *dest, int *dest_idx, char *src)
+char	*ft_append_str(char *dest, int *dest_idx, char *src)
 {
-	int src_idx;
-	
+	int	src_idx;
+
 	src_idx = 0;
 	while (src[src_idx])
 	{
@@ -27,20 +27,19 @@ char *ft_append_str(char *dest, int *dest_idx, char *src)
 	return (dest);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *result;
-	int result_idx;
+	char	*result;
+	int		result_idx;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-    result = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
+	result = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 	result_idx = 0;
-    if (result == NULL)
-        return (NULL);
-	/* Join both strings */
-    ft_append_str(result, &result_idx, (char *) s1);
-	ft_append_str(result, &result_idx, (char *) s2);
+	if (result == NULL)
+		return (NULL);
+	ft_append_str(result, &result_idx, (char *)s1);
+	ft_append_str(result, &result_idx, (char *)s2);
 	result[result_idx] = 0;
 	return (result);
 }
@@ -49,4 +48,3 @@ char *ft_strjoin(char const *s1, char const *s2)
 // {
 // 	printf("res: %s", ft_strjoin("K is for ", "koding."));
 // }
-

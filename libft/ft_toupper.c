@@ -6,15 +6,15 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:12:16 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/03 20:50:25 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:02:35 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
 	return (c);
 }

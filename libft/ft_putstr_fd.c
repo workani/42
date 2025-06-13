@@ -6,20 +6,20 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:28:59 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/05 17:33:09 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:01:19 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    while (*s)
-    {
-        ft_putchar_fd(*s, fd);
-        s++;
-    }
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
 }
 // int main()
 // {

@@ -6,58 +6,55 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:12:50 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/13 13:38:47 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:00:30 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <limits.h>
 #include "libft.h"
+#include <limits.h>
+#include <stdlib.h>
 
-int ft_get_int_len(int n)
+int	ft_get_int_len(int n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (n == 0)
-        i++;
-    while (n)
-    {
-        n /= 10;
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (n == 0)
+		i++;
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
-
-
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int i;
-    char *result;
-  
-    if (n == INT_MIN)
-        return (ft_strdup("-2147483648"));
-    i = 0;
-    result = (char *)malloc(12 * sizeof(char));
-    if (result == NULL)
-        return (NULL);
-    if (n < 0)
-    {
-        n = -n;
-        result[0] = '-';
-        i++; 
-    }
-    i += ft_get_int_len(n);
-    result[i] = '\0';
-    while (i--)
-    {
-        if (result[i] != '-')
-            result[i] = (n % 10) + '0';
-        n /= 10;
-    }
-    return (result);
+	int		i;
+	char	*result;
+
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	i = 0;
+	result = (char *)malloc(12 * sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	if (n < 0)
+	{
+		n = -n;
+		result[0] = '-';
+		i++;
+	}
+	i += ft_get_int_len(n);
+	result[i] = '\0';
+	while (i--)
+	{
+		if (result[i] != '-')
+			result[i] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (result);
 }
 // int main()
 // {
