@@ -1,0 +1,11 @@
+.vscode/
+TODO
+libftTester/
+
+playground.c
+script.py
+
+# Binary
+a.out
+*.a
+*.o
