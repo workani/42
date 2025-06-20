@@ -6,17 +6,17 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:55:31 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 15:58:10 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/20 20:02:03 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int putptr(void *ptr)
+int	putptr(void *ptr)
 {
-	int count;
-	uintptr_t u_ptr;
-	
+	int			count;
+	uintptr_t	u_ptr;
+
 	if (!ptr)
 		return (putstr("(nil)"));
 	u_ptr = (uintptr_t)ptr;

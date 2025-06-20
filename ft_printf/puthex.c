@@ -6,19 +6,22 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:33:25 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:36:27 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/20 19:57:04 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	itohex(char dst[], uintptr_t u_src)
+int	itohex(char dst[], uintptr_t u_src, bool is_upper)
 {
-	int				i;
-	char			hex[17];
+	int		i;
+	char	hex[17];
 
 	i = 0;
-	ft_strlcpy(hex, "0123456789abcdef", 17);
+	if (is_upper)
+		ft_strlcpy(hex, "0123456789ABCDEF", 17);
+	else
+		ft_strlcpy(hex, "0123456789abcdef", 17);
 	while (u_src > 0)
 	{
 		dst[i] = hex[u_src % 16];
@@ -32,14 +35,12 @@ int	puthex(uintptr_t n, bool is_upper)
 {
 	int		i;
 	int		count;
-	char	hex_nbr[32]; // 32 is max length of printf's %p output
+	char	hex_nbr[32];
 
 	count = 0;
 	if (n == 0)
 		return (ft_putchar_fd('0', 1));
-	i = itohex(hex_nbr, n);
-	if (is_upper)
-		ft_strtoupper(hex_nbr);
+	i = itohex(hex_nbr, n, is_upper);
 	while (i--)
 		count += ft_putchar_fd(hex_nbr[i], 1);
 	return (count);

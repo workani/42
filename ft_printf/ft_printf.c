@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 13:48:41 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:29:26 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/20 19:53:04 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	print_placeholder(char placeholder, va_list *args)
 	if (placeholder == 'u')
 		count += putuint(va_arg(*args, unsigned int));
 	if (placeholder == 'x')
-		count += puthex((unsigned int) va_arg(*args, int), false);
+		count += puthex((unsigned int)va_arg(*args, int), false);
 	if (placeholder == 'X')
-		count += puthex(va_arg(*args, int), true);
+		count += puthex((unsigned int)va_arg(*args, int), true);
 	if (placeholder == '%')
 		count += ft_putchar_fd(placeholder, 1);
 	return (count);
@@ -59,15 +59,18 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-//int	main(void)
+// int	main(void)
 //{
 //	int count1, count2;
+//	int n = INT32_MIN;
 //	// case 1 --- Hex ---
-//	count1 = ft_printf("Hex: %x\n", INT32_MAX);
-//	count2 = printf("Hex: %x\n", INT32_MAX);
+//	count1 = ft_printf(" %x \n", n);
+//	count2 = printf(" %x \n", n);
+//	count1 = ft_printf(" %X \n", n);
+//	count2 = printf(" %X \n", n);
 //	printf("[ft_printf: %d | printf: %d]\n", count1, count2);
-	
-////	// case 2 --- Valid pointer -- 
+
+////	// case 2 --- Valid pointer --
 ////	count1 = ft_printf("Ptr: %p.\n", &count1);
 ////	count2 = printf("Ptr: %p.\n", &count1);
 ////	printf("[ft_printf: %d | printf: %d]\n", count1, count2);
@@ -76,7 +79,7 @@ int	ft_printf(const char *str, ...)
 ////	//count1 = ft_printf("Ptr: %p.\n", NULL);
 ////	//count2 = printf("Ptr: %p.\n", NULL);
 ////	//printf("[ft_printf: %d | printf: %d]\n", count1, count2);
-	
+
 ////	// case 2 --- Null str ---
 ////	// count1 = ft_printf("%s\n", NULL);
 ////	// count2 = printf("%s\n", NULL);

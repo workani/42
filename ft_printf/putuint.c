@@ -6,7 +6,7 @@
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 18:59:04 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:17:13 by dklepenk         ###   ########.fr       */
+/*   Updated: 2025/06/20 20:02:11 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	uitostr(char dst[], unsigned long u_src)
 {
-	int				i;
+	int	i;
 
 	i = 0;
 	while (u_src > 0)
@@ -30,7 +30,7 @@ int	putuint(unsigned long n)
 {
 	int		i;
 	int		count;
-	char	nbr_str[10]; 
+	char	nbr_str[10];
 
 	count = 0;
 	if (n == 0)
