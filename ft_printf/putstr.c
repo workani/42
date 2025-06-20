@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
+/*   putstr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 21:26:53 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:26:11 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/20 15:46:49 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/20 15:57:36 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_strtoupper(char *str)
+int	putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
-		i++;
-	}
+	if (!str)
+		return (ft_putstr_fd("(null)", 1));
+	return (ft_putstr_fd(str, 1));
 }

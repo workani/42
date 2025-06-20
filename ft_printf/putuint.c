@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
+/*   putuint.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 21:26:53 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:26:11 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/20 18:59:04 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/20 19:17:13 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_strtoupper(char *str)
+int	uitostr(char dst[], unsigned long u_src)
 {
-	int i;
+	int				i;
 
 	i = 0;
-	while (str[i])
+	while (u_src > 0)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
+		dst[i] = (u_src % 10) + '0';
+		u_src /= 10;
 		i++;
 	}
+	return (i);
+}
+
+int	putuint(unsigned long n)
+{
+	int		i;
+	int		count;
+	char	nbr_str[10]; 
+
+	count = 0;
+	if (n == 0)
+		return (ft_putchar_fd('0', 1));
+	i = uitostr(nbr_str, n);
+	while (i--)
+		count += ft_putchar_fd(nbr_str[i], 1);
+	return (count);
 }

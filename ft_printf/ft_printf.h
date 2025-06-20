@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dklepenk <dklepenk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 21:26:53 by dklepenk          #+#    #+#             */
-/*   Updated: 2025/06/20 19:26:11 by dklepenk         ###   ########.fr       */
+/*   Created: 2025/06/20 15:45:03 by dklepenk          #+#    #+#             */
+/*   Updated: 2025/06/20 19:05:05 by dklepenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include "libft/libft.h"
+# include <stdint.h>
+# include <stdarg.h>
 
-void	ft_strtoupper(char *str)
-{
-	int i;
+int	putuint(unsigned long n);
+int	puthex(uintptr_t n, bool is_upper);
+int	putptr(void *ptr);
+int	putstr(char *str);
+int	ft_printf(const char *str, ...);
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
-		i++;
-	}
-}
+#endif 
