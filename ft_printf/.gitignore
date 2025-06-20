@@ -1,0 +1,6 @@
+playground.c
+
+# Binaries
+*.o
+*.a
+a.out
